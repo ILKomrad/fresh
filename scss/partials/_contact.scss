@@ -1,0 +1,296 @@
+.contacts {
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+    transform: all .5s;
+  
+    &__content {
+      position: relative;
+      z-index: 2;
+      background: url('../images/map_bg.png');
+      overflow: hidden;
+      padding-top: 100px;
+      transition: all .5s;
+      clip-path: polygon(0 0, 100% 0, 50% 100%, 0 100%);
+    }
+
+    &.open {
+      .contacts__content {
+          clip-path: polygon(0 0, 0 0, 50% 100%, 0 100%);
+      }
+
+      .map-open {
+          left: 24.5%;
+
+          &::after {
+            @include icons;
+            background-position: -71px -140px;
+            left: 0;
+          }
+
+          &::before {
+            border: 3px solid #000000;
+          }
+      }
+
+      .contacts__title_anim {
+          transform: rotate(-90deg) translateX(6vh);
+      }
+
+      .contacts-wrap svg {
+          opacity: 0;
+      }
+
+      .contact__inner {
+        text-align: left;
+        padding-left: 50px;
+        margin: 0;
+        font: 14px $mainFont_light;
+
+        &::before {
+          top: 50%;
+          left: 0;
+          transform: translate(0, -50%);
+        }
+      }
+
+      .contacts-list {
+        top: 20%;
+        width: 70%;
+      }
+
+      .contact-email {
+        top: 63%;
+      }
+
+      .contact-adress {
+        top: 49%;
+      }
+
+      .contact-phone {
+        top: 37%;
+      }
+
+      .contact-footer {
+        opacity: 0;
+      }
+    }
+  
+    &__title {
+      color: #fff;
+
+      &_anim {
+            font: 7.3vmin $mainFont_light;
+            color: #fff;
+            font-weight: 100;
+            opacity: 1;
+            letter-spacing: 1.7vmin;
+            transform: rotate(-90deg) translateX(-100%);
+            transition: all .5s;
+            transform-origin: bottom left;
+            position: absolute;
+            left: 10%;
+            bottom: 0;
+      }
+    }
+  
+    .sec__title_lg {
+      &::before {
+          width: 21%;
+          background: linear-gradient(to right, #1a1a1a 1%, #de4540 10%, #de4540 90%, #1a1a1a 99%);
+      }
+  
+      &:after {
+          width: 21%;
+          background: linear-gradient(to right, #1a1a1a 1%, #de4540 10%, #de4540 90%, #1a1a1a 99%);
+      }
+    }
+  
+    &-wrap {
+      position: relative;
+      margin: 120px 0 147px 0;
+      display: inline-block;
+  
+      svg {
+        position: relative;
+        width: 50.1vmin;
+        height: 63.1vmin;
+        z-index: -1;
+        opacity: 1;
+        transition-property: all;
+        transition-duration: .5s;
+        transition-delay: .5s;
+        z-index: 3;
+
+        &.svg-abs {
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+      }
+    }
+  
+    &-list {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      transition: all .5s;
+    }
+  }
+  
+  .contact {
+    height: calc(100% / 4 + 4px);
+    margin-top: 1.4px;
+    display: flex;
+    transition: all .5s;
+    position: absolute;
+    width: 100%;
+  
+    &__inner {
+      color: #fff;
+      position: relative;
+      margin: auto;
+      text-align: center;
+  
+      &::before {
+        content: '';
+        position: absolute;
+        @include icons;
+        display: block;
+        transition: all .5s;
+      }
+    }
+  
+    &-phone {
+      .contact__inner {
+        padding-left: 30px;
+  
+        &::before {
+          background-position: 0 -74px;
+          width: 19px;
+          height: 19px;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  
+    &-adress {
+      top: 26%;
+
+      .contact__inner {
+        &::before {
+          background-position: -30px -75px;
+          width: 25px;
+          height: 46px;
+          top: -22px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+  
+      &__text {
+        position: relative;
+        z-index: 1;
+      }
+    }
+
+    &-email {
+      top: 52%;
+    }
+  
+    &-soc {
+      top: 56%;
+      margin-top: 15px;
+  
+      a {
+        vertical-align: middle;
+        margin: 0 18px;
+      }
+    }
+  
+    &-footer {
+      top: 78%;
+      height: 19.4%;
+  
+      &__link {
+        width: 50%;
+        height: 100%;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font: 12px $mainFont_medium;
+  
+        span {
+          display: inline-block;
+        }
+  
+        &:first-child {
+          span {
+            text-align: right;
+          }
+        }
+  
+        &:last-child {
+          span {
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+
+  .map-open {
+    width: 81px;
+    height: 81px;
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    left: 70.4%;
+    border: none;
+    transition: all .5s;
+    border-radius: 50%;
+
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+    }
+
+    &::after {
+      @include icons;
+      background-position: 0 -140px;
+      transition: all .5s;
+    }
+
+    &::before {
+      border-radius: 50%;
+      border: 3px solid #fff;
+      transform-origin: center;
+      animation: btnScale 2s linear 0s infinite;
+    }
+  }
+
+@keyframes btnScale{
+  to{
+    transform:scale(1.5);
+    opacity:0;
+  }
+}
+
+#map {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}

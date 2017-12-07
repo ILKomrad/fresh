@@ -1,0 +1,125 @@
+
+.decision {
+  padding-bottom: 0;
+  background: $black;
+  overflow: hidden;
+
+  &__title {
+    color: #fff;
+  }
+  
+  .sec__title_lg::before {
+    background: linear-gradient(to right, #de4540 66%, #131313 88%);
+  }
+
+  .sec__title_lg::after {
+    background: linear-gradient(to right, #131313 12%, #de4540 34%);
+  }
+
+  &__inner {
+    background: url('../images/sec3-bg.png') center bottom;
+    background-size: cover;
+    overflow: visible;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .5s;
+    position: relative;
+  }
+
+  &-svg-hide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200vw;
+    height: 200vh;
+    transform: translate(-25%, -25%);
+
+    svg {
+      height: 100%;
+      width: 100%;
+      transform: scale(0);
+      transform-origin: center;
+    }
+  }
+
+  &__dots {
+    position: absolute;
+    transform-origin: center;
+    transition: all .5s;
+
+    &_left {
+      left: -30.4vmin;
+      width: 78.9vmin;
+      height: 79.2vmin;
+      background-image: url(../images/dots-left.png);
+    }
+
+    &_right {
+      top: 38%;
+      right: 10%;
+      width: 20.3vmin;
+      height: 19.2vmin;
+      background-image: url(../images/dots-right.png);
+    }
+  }
+}
+
+.tasks-wrap {
+  text-align: center;
+}
+
+.tasks {
+  position: relative;
+  display: inline-block;
+}
+
+.task {
+  color: #fff;
+  font: 13.62px $mainFont_bold;
+  position: absolute;
+  text-transform: uppercase;
+  text-align: center;
+
+  &:nth-child(1) {
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -120%);
+  }
+
+  &:nth-child(2) {
+    right: 7%;
+    top: 26%;
+  }
+
+  &:nth-child(3) {
+    right: 17%;
+    bottom: 0;
+  }
+
+  &:nth-child(4) {
+    left: 18%;
+    bottom: 0;
+  }
+
+  &:nth-child(5) {
+    top: 26%;
+    left: 0;
+  }
+
+  &_center {
+    color: $red;
+    font: 22.8px $mainFont_medium;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.mh {
+  max-height: 0!important;
+  overflow: hidden!important;
+  padding: 0!important;
+}

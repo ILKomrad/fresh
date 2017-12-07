@@ -1,0 +1,125 @@
+.questions {
+  background: $black;
+  color: #fff;
+  position: relative;
+  padding: 95px 0 160px 0;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 46px;
+    top: 20px;
+    bottom: 133px;
+    width: 151px;
+    background: url('../images/questions/plus_white.png') -44px -44px repeat;
+  }
+
+  &-list {
+    margin: 70px auto 100px;
+  }
+
+  .sec__title_lg {
+    color: $red;
+  }
+
+  &__bottom {
+    &-title {
+      color: $red;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      color: #fff;
+    }
+  }
+}
+
+.question {
+  padding: 25px 0;
+  color: #666666;
+  transition: all .5s;
+  position: relative;
+  
+  &.selected {
+    padding: 50px 0;
+    background: #fff;
+    z-index: 2;
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 46px;
+      top: 10px;
+      bottom: 10px;
+      width: 151px;
+      background: url('../images/questions/plus_black.png') -44px -6px repeat;
+    }
+
+    .question__title {
+      color: $red;
+    }
+    
+    .question__plus {
+      background: $red;
+
+      &::after {
+        transform: rotate(0deg);
+      }
+    }
+  }
+
+  &__plus {
+    background: $whiteGrey;
+    display: block;
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    left: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 3px;
+      transition: all .5s;
+      transform-origin: center;
+      left: 50%;
+      top: 50%;
+      margin: auto;
+      background: $black;
+      margin: -1.5px 0 0 -5px;
+    }
+
+    &::after {
+      transform: rotate(-90deg);
+    }
+  }
+
+  &__title {
+    font: 16px $mainFont_bold;
+    padding-left: 50px;
+    position: relative;
+  }
+
+  &__content {
+    font: 14px $mainFont_medium;
+    padding-left: 65px;
+    position: relative;
+    width: 70%;
+    display: none;
+    margin-top: 20px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50px;
+      top: 0;
+      height: 100%;
+      width: 1px;
+      background: $red;
+    }
+  }
+}

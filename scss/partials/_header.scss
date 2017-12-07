@@ -1,0 +1,85 @@
+.header {
+  background: rgba(230,227,227,.95);
+  color: $darkGrey;
+  height: 4.9vmin;
+  color: #fff;
+  font: 14px $mainFont;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 100;
+
+  &-nav {
+    &__list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 4.9vmin;
+    }
+  
+    &__item {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 1vw;
+    }
+  
+    &__link {
+      display: inline-block;
+      white-space: nowrap;
+      text-transform: uppercase;
+      padding: 0 2.6vmin;
+      position: relative;
+      color: $darkGrey;
+      font-size: 1.5vmin;
+      opacity: .7;
+      transition: all .5s;
+
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        height: 1px;
+        width: 0;
+        margin-top: -.5px;
+        background: $darkGrey;
+        transition: all .5s;
+      }
+
+      &:before {
+        left: 0;
+      }
+
+      &:after {
+        right: 0;
+      }
+  
+      &.active, &:hover {
+        opacity: 1;
+        color: $red;
+
+        &:before,
+        &:after {
+          width: 1.6vmin;
+        }
+  
+        &:before {
+          left: 0;
+        }
+  
+        &:after {
+          right: 0;
+        }
+      }
+    }
+  }
+
+  &__phone {
+    font-size: 2.5vmin;
+    position: absolute;
+    right: 17px;
+    top: 0;
+    line-height: 4.9vmin;
+  }
+}

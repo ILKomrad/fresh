@@ -1,0 +1,19 @@
+.price {
+  padding: 65px 0 110px 0;
+  
+  &-table {
+    width: 42%;
+    margin: 95px auto 75px;
+    text-transform: uppercase;
+
+    &__k {
+      font: 14px $mainFont_bold;
+      color: $red;
+    }
+
+    &__v {
+      font: 48px $mainFont_light;
+      color: #5B5B5B;
+    }
+  }
+}

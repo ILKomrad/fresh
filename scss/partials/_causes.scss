@@ -1,0 +1,26 @@
+.causes {
+  background: url('../images/workforyou.jpg') center;
+  background-size: cover;
+  padding: 90px 0;
+
+  &-list {
+    margin: 140px auto 90px;
+  }
+}
+
+.cause {
+  width: 50%;
+  float: left;
+  text-align: center;
+
+  &__title {
+    color: $red;
+    font: 48px $mainFont_light;
+  }
+
+  &__content {
+    color: $darkGrey;
+    font: 14px $mainFont_reg;
+    margin-top: 40px;
+  }
+}

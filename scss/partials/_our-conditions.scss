@@ -1,0 +1,22 @@
+.our-conditions {
+  padding-bottom: 200px;
+
+  &-table {
+    margin-top: 110px;
+
+    &__row {
+      margin-top: 90px;
+    }
+
+    &__k {
+      font: 48px $mainFont_light;
+      color: $darkGrey;
+      line-height: 0.8;
+    }
+
+    &__v {
+      font: 14px $mainFont_bold;
+      color: $red;
+    }
+  }
+}

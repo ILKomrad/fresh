@@ -1,0 +1,16 @@
+$red: #FF433E;
+$grey: #d5d5d5;
+$whiteGrey: #CDCDCD;
+$black: #131313;
+$darkGrey: #464646;
+
+@mixin icons {
+    background: url('../images/sprite.png');
+}
+
+$mainFont: roboto;
+$mainFont_bold: robotobold;
+$mainFont_reg: robotoregular;
+$mainFont_medium: robotomedium;
+$mainFont_light: robotolight;
+$font_decor: Vidaloka-Regular;

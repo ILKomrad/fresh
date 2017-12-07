@@ -1,0 +1,22 @@
+@import 'partials/common';
+@import 'partials/header';
+@import 'partials/top';
+@import 'partials/experts';
+@import 'partials/decision';
+@import 'partials/portfolio';
+@import 'partials/about';
+@import 'partials/employees';
+@import 'partials/price';
+@import 'partials/questions';
+@import 'partials/blogs';
+@import 'partials/our-conditions';
+@import 'partials/causes';
+@import 'partials/contact';
+
+.footer {
+  padding: 20px;
+  background: #1a1a1a;
+  color: #fff;
+  font: 10px $mainFont_light;
+  text-align: center;
+}
