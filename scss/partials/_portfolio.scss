@@ -1,4 +1,9 @@
 .portfolio {
+  position: relative;
+  opacity: 0;
+  background: #fff;
+  overflow: hidden;
+
   .sec__title_lg {
     &::after,
     &::before {

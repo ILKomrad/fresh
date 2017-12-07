@@ -397,15 +397,16 @@ $(document).ready(function() {
     var timeLineStar = new TimelineMax();
     timeLineStar
       .to('.decision-svg-hide svg', 1, {scale: 2, delay: 0.5, onComplete: function() {
-        ctrl.scrollTo('.portfolio')
+        //ctrl.scrollTo('.portfolio')
       }})
       .to('.decision-svg-hide .letter', 0.5, {fill: '#ffffff'}, '-=0.6')
       .to('.decision-svg-hide svg', 1, {opacity: 0})
+      .to('.portfolio', 0, {opacity: 1}, '-=1')
 
     var scene1 = new ScrollMagic.Scene({
         triggerElement: '#trig',
         triggerHook: 'onLeave',
-        duration: '200%',
+        duration: '150%',
     })
     .on('enter', function() {
         $('#arrows > g').each(function() {
