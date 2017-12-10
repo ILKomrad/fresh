@@ -2,12 +2,16 @@
   position: relative;
   opacity: 0;
   background: #fff;
+  z-index: 1;
   overflow: hidden;
 
   .sec__title_lg {
+    padding: 0 21%;
+
     &::after,
     &::before {
       width: 20%;
+      background: $red;
     }
   }
 
@@ -23,7 +27,7 @@
 
     &__item {
       float: left;
-      width: 22%;
+      width: 23%;
       list-style-type: none;
       text-align: center;
       margin: 1%;
@@ -89,5 +93,75 @@
         background-position: -144px -77px;
       }
     }
+  }
+}
+
+@media all and (max-width: 991px) {
+  .portfolio-list {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .portfolio-list {
+    width: 75%;
+
+    &__item {
+      width: 31.3%;
+    }
+  }
+
+  .portfolio .sec__title_lg::after, .portfolio .sec__title_lg::before {
+    width: 8%;
+  }
+
+  .portfolio .sec__title_lg {
+    padding: 0 9%;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .portfolio {
+    &-list {
+      width: 100%;
+      padding: 0 23px;
+
+      &__item {
+        float: none;
+        width: 100%;
+        margin: 40px 0 0 0;
+        text-align: center;
+        
+        a {
+          display: inline-block;
+          position: relative;
+        }
+      }
+    }
+
+    &-overlay {
+      width: 140px;
+      height: 60px;
+      bottom: 0!important;
+      right: 0!important;
+      top: inherit!important;
+      left: inherit!important;
+
+      &__title {
+        display: none;
+      }
+
+      &__icon {
+        top: 50%;
+        transform: translate(-50%, -50%);
+        bottom: inherit;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 320px) {
+  .portfolio {
+    opacity: 1;
   }
 }

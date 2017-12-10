@@ -1,6 +1,6 @@
 .top {
   height: 100vh;
-  padding: 115px 65px 65px 65px;
+  padding: 10.5vmin 6.5vmin 2.5vmin 6.5vmin;
   overflow: hidden;
   position: relative;
 
@@ -19,21 +19,18 @@
   }
 
   &__label {
-    font: 22px $mainFont_reg;
+    font: 2.3vmin $mainFont_medium;
     font-weight: normal;
     position: relative;
     padding-left: 25px;
     position: absolute;
     z-index: 4;
+    text-align: left;
+    letter-spacing: .5vmin;
 
     &_top {
       top: 0;
       left: 0;
-    }
-
-    &_bottom {
-      bottom: 0;
-      right: 0;
     }
 
     &::before {
@@ -42,8 +39,21 @@
       left: 0;
       top: 0;
       height: 100%;
-      width: 3px;
+      width: 1px;
       background: $red;
+    }
+
+    &_bottom {
+      bottom: 0;
+      right: 0;
+      padding-left: 0;
+      padding-right: 25px;
+      text-align: right;
+
+      &::before {
+        right: 0;
+        left: inherit;
+      }
     }
   }
 
@@ -57,14 +67,15 @@
     &__label {
       font: 11.9vw $font_decor;
       color: $red;
-      letter-spacing: 8vh;
+      letter-spacing: 5.7vmin;
       line-height: 1;
     }
 
     &__content {
-      font: 18px $mainFont_medium;
+      font: 1.9vmin $mainFont_medium;
       color: #000;
       text-align: left;
+      letter-spacing: .3vmin;
       padding: 10px 0 0 20px;
     }
   }
@@ -80,6 +91,7 @@
       background: url('../images/top_mountain_back.jpg');
       background-size: 100% 100%;
       background-position: 50% 50%;
+      background-repeat: no-repeat;
       z-index: 1;
       animation: moveToLeft 40s linear forwards;
     }
@@ -88,6 +100,7 @@
       background: url('../images/top_mountain_front.png');
       background-size: 100% 100%;
       background-position: 50% 50%;
+      background-repeat: no-repeat;
       z-index: 3;
       animation: moveToRight 40s linear forwards;
     }
@@ -111,3 +124,55 @@
 		transform: scale(1.2) translate(3%);
 	}
 }
+
+
+@media all and (max-width: 991px) {
+  .top {
+    padding: 6.5vmin 3.5vmin 6.5vmin 3.5vmin;
+  }
+
+  .top-mountain {
+    top: 0;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .top {
+    &-title {
+      &__label {
+        font-size: 16.9vw;
+      }
+
+      &__content {
+        padding-left: 0;
+        font-size: 2.4vmin;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 320px) {
+  .top {
+    &-title {
+      &__label {
+        font-size: 18.8vw;
+      }
+
+      &__content {
+        font-size: 3vmin;
+      }
+    }
+
+    &-mountain {
+      &_back {
+        background-size: cover;
+      }
+
+      &_front {
+        background-size: cover;
+        background-position: 78% 52px;
+      }
+    }
+  }
+}
+

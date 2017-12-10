@@ -2,7 +2,15 @@
   background: $black;
   color: #fff;
   position: relative;
-  padding: 95px 0 160px 0;
+  padding: 95px 0 100px 0;
+
+  &__title {
+    color: #fff;
+
+    .sec__title_md {
+      font-size: 15px;
+    }
+  }
 
   &::after {
     content: '';
@@ -15,7 +23,7 @@
   }
 
   &-list {
-    margin: 70px auto 100px;
+    margin: 70px auto 0;
   }
 
   .sec__title_lg {
@@ -120,6 +128,45 @@
       height: 100%;
       width: 1px;
       background: $red;
+    }
+  }
+}
+
+@media all and (max-width: 768px) {
+  .question {
+    &__title {
+      font-size: 12px;
+    }
+
+    &.selected {
+      .question__title {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .questions {
+    &::after {
+      top: 203px;
+      right: 23px;
+      width: 16%;
+    }
+
+    &-list {
+      padding-right: calc(16% + 23px);
+    }
+  }
+}
+
+
+@media all and (max-width: 768px) {
+  .questions {
+    &::after {
+      display: none;
+    }
+
+    &-list {
+      padding-right: 0;
     }
   }
 }

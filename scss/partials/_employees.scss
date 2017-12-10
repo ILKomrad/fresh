@@ -26,7 +26,6 @@
     margin: 106px 0;
 
     &__row {
-      display: flex;
       position: relative;
 
       &::after {
@@ -73,7 +72,7 @@
     
     &__col {
       height: 100px;
-      width: 5.6%;
+      width: 100%;
       position: relative;
 
       &::before,
@@ -215,5 +214,83 @@
     color: #fff;
     font: 12px $mainFont_light;
     padding-left: 50px;
+  }
+}
+
+.table__range {
+  width: 56%;
+}
+
+@media all and (max-width: 991px) {
+  .employees {
+    &__label {
+      font-size: 18px;
+      position: absolute;
+      margin-top: 0;
+      transform: translateY(-100%);
+    }
+
+    &__desc {
+      padding-bottom: 70px;
+    }
+
+    &-table__col {
+      height: auto;
+    }
+  }
+}
+
+@media all and (max-width: 600px) {
+  .employees-table__row::after {
+    display: none;
+  }
+  
+  .employees {
+    &-table {
+      &__row {
+        flex-wrap: wrap;
+      }
+
+      .employees-table__col {
+        width: 10%;
+
+        &_lg {
+          width: 100%;
+        }
+      }
+    }
+
+    &__label {
+      position: relative;
+      transform: none;
+    }
+  }
+
+  .table__range {
+    position: absolute;
+    left: 50px;
+    right: 0;
+    top: 30px;
+    width: initial;
+
+    .employees-table__col {
+      border-top: 1px solid $darkGrey;
+    }
+  }
+
+  .employees-table__col::after {
+    display: none;
+  }
+}
+
+@media all and (max-width: 320px) {
+  .employees__line {
+    transform: scale(1);
+  }
+
+  .employees__label {
+    font-size: 14px;
+    padding-bottom: 20px;
+    margin-bottom: 8px;
   }
 }

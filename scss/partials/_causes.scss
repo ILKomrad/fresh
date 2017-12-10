@@ -15,12 +15,29 @@
 
   &__title {
     color: $red;
-    font: 48px $mainFont_light;
+    font: 4.9vmin $mainFont_light;
   }
 
   &__content {
     color: $darkGrey;
-    font: 14px $mainFont_reg;
+    font: 1.5vmin $mainFont_reg;
     margin-top: 40px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .cause {
+    float: none;
+    max-width: 350px;
+    width: 100%;
+    margin: 120px auto 0;
+
+    &__title {
+      font-size: 9.5vmin;
+    }
+
+    &__content {
+      font-size: 2.5vmin;
+    }
   }
 }

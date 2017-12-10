@@ -4,6 +4,7 @@
   height: 100vh;
   position: relative;
   overflow: hidden;
+  padding: 9.9vmin 0;
 
   &__btn {
     border: 1px solid $red;
@@ -38,16 +39,22 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    padding: 60px 0;
+    padding: 9.9vmin 0;
     transform: scale(0);
+    transition: all .5s;
 
     &.active {
       opacity: 1;
       transform: scale(1);
+
+      .partner {
+        opacity: 1;
+        transform: none;
+      }
     }
 
     &.zoom-in {
-      transform: scale(3);
+      transform: scale(1.3);
       opacity: 0;
     }
   }
@@ -192,9 +199,18 @@
   width: calc(100% / 6);
   list-style-type: none;
   text-align: center;
+  opacity: 0;
+  transition: all .5s;
+  transform: translateY(15px);
+  height: 10vmin;
+  position: relative;
 
   img {
-    max-width: 70%;
+    max-width: 65%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
@@ -235,6 +251,8 @@
       text-transform: uppercase;
       color: $red;
       font: 1.9vmin $mainFont_bold;
+      font-weight: 700;
+      margin-bottom: 2vmin;
     }
 
     &__img {
@@ -286,5 +304,69 @@
   &__text {
     font: 2.2vmin $mainFont_reg;
     text-transform: uppercase;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .partners-list,
+  .technologies-list,
+  .chars {
+    width: 100%;
+  }
+
+  .about .sec__title_lg::after, .about .sec__title_lg::before {
+      width: 24%;
+  }
+
+  .condition:nth-child(2n + 1), .condition:nth-child(1) {
+      padding-left: 20%;
+  }
+
+  .condition:nth-child(2n) {
+      padding-left: 40%;
+  }
+
+  .condition:nth-child(4)::before, .condition:nth-child(6)::before {
+    left: 4%;
+  }
+
+  .condition__text {
+    font-size: 2.3vmin;
+  }
+
+  .condition__number {
+    font-size: 9.3vmin;
+  }
+}
+
+@media all and (max-width: 320px) {
+  .condition:nth-child(2n + 1), .condition:nth-child(1) {
+      padding-left: 0;
+  }
+
+  .condition:nth-child(2n) {
+      padding-left: 26%;
+  }
+
+  .condition:nth-child(4)::before, .condition:nth-child(6)::before {
+    left: 4%;
+  }
+
+  .about-slide {
+    position: relative;
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .about {
+    height: auto;
+
+    &__title {
+      display: none;
+    }
+  }
+
+  .partner {
+    opacity: 1;
   }
 }

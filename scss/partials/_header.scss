@@ -8,7 +8,17 @@
   left: 0;
   top: 0;
   right: 0;
-  z-index: 100;
+  z-index: 998;
+  box-shadow: 0 3px 7.9px 1px rgba(0, 0, 0, .42);
+
+  &__logo {
+    position: absolute;
+    font: 4vmin $font_decor;
+    line-height: 5vmin;
+    left: 6.6vmin;
+    color: $red;
+    left: 6vmin;
+  }
 
   &-nav {
     &__list {
@@ -31,9 +41,10 @@
       padding: 0 2.6vmin;
       position: relative;
       color: $darkGrey;
-      font-size: 1.5vmin;
+      font: 1.5vmin $mainFont_bold;
       opacity: .7;
       transition: all .5s;
+      letter-spacing: .6vmin;
 
       &:before,
       &:after {
@@ -76,10 +87,18 @@
   }
 
   &__phone {
-    font-size: 2.5vmin;
+    font: 1.7vmin $mainFont_bold;
     position: absolute;
-    right: 17px;
+    right: 6vmin;
     top: 0;
     line-height: 4.9vmin;
+    letter-spacing: .4vmin;
+    color: $red;
+  }
+}
+
+@media all and (max-width: 991px) {
+  .header {
+    display: none;
   }
 }

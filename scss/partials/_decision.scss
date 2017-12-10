@@ -1,8 +1,13 @@
 
 .decision {
-  padding-bottom: 0;
-  background: $black;
+  padding: 0;
+  width: 100%;
   overflow: hidden;
+
+  &__container {
+    background: $black;
+    padding-top: 60px;
+  }
 
   &__slide_hide {
     position: absolute;
@@ -21,9 +26,11 @@
   &__title {
     color: #fff;
   }
-  
-  .sec__title_lg::before {
-    background: linear-gradient(to right, #de4540 66%, #131313 88%);
+
+  .sec__title_lg {
+    &::before {
+      background: linear-gradient(to right, #de4540 66%, #131313 88%);
+    }
   }
 
   .sec__title_lg::after {
@@ -31,8 +38,10 @@
   }
 
   &__slide_star {
-    background: url('../images/sec3-bg.png') center bottom;
+    background-image: url('../images/sec3-bg.png');
+    background-position: center bottom;
     background-size: cover;
+    background-color: $black;
     overflow: visible;
     height: 100vh;
     display: flex;
@@ -42,6 +51,8 @@
     position: absolute;
     left: 0;
     right: 0;
+    z-index: 2;
+    overflow: hidden;
   }
 
   &-svg-hide {
@@ -67,6 +78,7 @@
 
     &_left {
       left: -30.4vmin;
+      bottom: 0;
       width: 78.9vmin;
       height: 79.2vmin;
       background-image: url(../images/dots-left.png);
@@ -83,17 +95,17 @@
 }
 
 .tasks-wrap {
-  text-align: center;
-}
-
-.tasks {
-  position: relative;
-  display: inline-block;
+    position: absolute;
+    height: 55%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    width: 86vmin;
 }
 
 .task {
   color: #fff;
-  font: 13.62px $mainFont_bold;
+  font: 1.5vmin $mainFont_bold;
   position: absolute;
   text-transform: uppercase;
   text-align: center;
@@ -126,11 +138,19 @@
 
   &_center {
     color: $red;
-    font: 22.8px $mainFont_medium;
+    font: 2.5vmin $mainFont_medium;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  &-svg {
+    svg {
+      width: 100%!important;
+    height: 100%!important;
+    position: absolute;
+    }
   }
 }
 
@@ -138,4 +158,65 @@
   max-height: 0!important;
   overflow: hidden!important;
   padding: 0!important;
+}
+
+.wrap-dots-bg {
+  position: absolute;
+  left: 0;
+  top: 20vmin;
+  width: 100%;
+  height: calc(100% - 20vmin);
+  overflow: hidden;
+  background: transparent;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    background-image: url('../images/border-dots.png');
+  }
+}
+
+@media all and (max-width: 768px) {
+  .decision__dots_left,
+  .decision__dots_right {
+    display: none;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .decision__slide_star,
+  .decision__container {
+    background: #0B0B0B;
+  }
+}
+
+@media all and (max-width: 450px) {
+  .task {
+    &:nth-child(2) {
+        right: 0%;
+        top: 30%;
+    }
+
+    &:nth-child(5) {
+        left: 0;
+        top: 30%;
+    }
+
+    &__center {
+      display: none;
+    }
+  }
+}
+
+@media all and (max-width: 320px) {
+  .decision__slide_star {
+    position: relative;
+  }
 }

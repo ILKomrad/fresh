@@ -9,11 +9,31 @@
     &__k {
       font: 14px $mainFont_bold;
       color: $red;
+      transition: color .5s;
     }
 
     &__v {
-      font: 48px $mainFont_light;
+      font: 4.9vmin $mainFont_light;
       color: #5B5B5B;
+      transition: color .5s;
+    }
+
+    .text-table__row:hover {
+      .price-table__k {
+        color: #5B5B5B;
+      }
+
+      .price-table__v {
+        color: $red;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 991px) {
+  .price {
+    &-table {
+      width: 100%;
     }
   }
 }

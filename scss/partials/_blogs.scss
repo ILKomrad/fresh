@@ -1,18 +1,18 @@
 .blogs {
   &-list {
-    margin: 130px auto 0;
+    margin: 0 auto;
     width: 630px;
   }
 }
 
 .blog {
-  padding: 130px 0;
+  padding: 75px 0;
 
   &-item {
     width: 46%;
     float: left;
     border: 1px solid #d8d8d8;
-    margin: 0 4%;
+    margin: 75px 4% 0;
 
     &:nth-child(1),
     &:nth-child(2n + 1) {
@@ -29,8 +29,9 @@
 
     &__name {
       color: $darkGrey;
-      font: 25px $mainFont_reg;
+      font: 15px $mainFont_reg;
       height: 80px;
+      letter-spacing: .5vmin;
     }
 
     &__desc {
@@ -41,8 +42,12 @@
     }
 
     &__img {
+      overflow: hidden;
+
       img {
+        transition: all .5s linear;
         width: 100%;
+        display: block;
       }
     }
 
@@ -52,6 +57,37 @@
       font-size: 12px;
       padding: 9px 20px;
       text-transform: uppercase;
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.5);
+      }
+    }
+  }
+}
+
+@media all and (max-width: 767px) {
+  .blogs {
+    &-list {
+      width: 100%;
+    }
+  }
+
+  .blog-item {
+    float: none;
+    width: 350px;
+    margin-left: auto!important;
+    margin-right: auto!important;
+  }
+}
+
+@media all and (max-width: 400px) {
+  .blog-item {
+    width: 100%;
+    
+    .align-right {
+      text-align: center;
     }
   }
 }

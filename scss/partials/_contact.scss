@@ -2,14 +2,18 @@
     position: relative;
     padding: 0;
     overflow: hidden;
-    transform: all .5s;
+    transition: all .5s;
+    background: $black;
   
     &__content {
       position: relative;
       z-index: 2;
       background: url('../images/map_bg.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
       overflow: hidden;
-      padding-top: 100px;
+      padding-top: 10.9vmin;
       transition: all .5s;
       clip-path: polygon(0 0, 100% 0, 50% 100%, 0 100%);
     }
@@ -20,16 +24,20 @@
       }
 
       .map-open {
-          left: 24.5%;
-
-          &::after {
-            @include icons;
-            background-position: -71px -140px;
-            left: 0;
-          }
+          left: 25.5%;
+          background: url('../images/close_map.png') center center;
+          background-size: contain;
 
           &::before {
             border: 3px solid #000000;
+          }
+
+          &__overflow {
+            transform: translate(13%, -57%) rotate(50deg);
+          }
+
+          &__anim {
+            border-color: #000;
           }
       }
 
@@ -108,7 +116,7 @@
   
     &-wrap {
       position: relative;
-      margin: 120px 0 147px 0;
+      margin: 5% 0 0 20%;
       display: inline-block;
   
       svg {
@@ -119,7 +127,6 @@
         opacity: 1;
         transition-property: all;
         transition-duration: .5s;
-        transition-delay: .5s;
         z-index: 3;
 
         &.svg-abs {
@@ -153,6 +160,7 @@
       position: relative;
       margin: auto;
       text-align: center;
+      font-size: 1.9vmin;
   
       &::before {
         content: '';
@@ -245,8 +253,8 @@
   }
 
   .map-open {
-    width: 81px;
-    height: 81px;
+    width: 8.2vmin;
+    height: 8.2vmin;
     position: absolute;
     z-index: 5;
     top: 50%;
@@ -254,16 +262,8 @@
     border: none;
     transition: all .5s;
     border-radius: 50%;
-
-    &::after,
-    &::before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      left: 0;
-      top: 0;
-    }
+    background: url('../images/open_map.png') center center;
+    background-size: contain;
 
     &::after {
       @include icons;
@@ -271,11 +271,26 @@
       transition: all .5s;
     }
 
-    &::before {
+    &__anim {
+      position: absolute;
+      width: 50%;
+      height: 50%;
+      left: 25%;
+      bottom: -25%;
       border-radius: 50%;
       border: 3px solid #fff;
       transform-origin: center;
       animation: btnScale 2s linear 0s infinite;
+    }
+
+    &__overflow {
+      display: block;
+      width: 200%;
+      height: 200%;
+      transform-origin: center center;
+      overflow: hidden;
+      transform: translate(-62%, -57%) rotate(-49deg);
+      transition: all .5s;
     }
   }
 
@@ -293,4 +308,53 @@
   width: 100%;
   height: 100%;
   z-index: 1;
+}
+
+@media all and (max-width: 768px) {
+  .contacts {
+    &__content {
+      text-align: center;
+    }
+
+    &-wrap {
+      margin: 5% auto 0;
+    }
+
+    &__content {
+      background: url('../images/map_bb_mob.png') center center;
+      clip-path: polygon(0 0, 146% 0, 69% 100%, 0 100%);
+    }
+
+    &.open {
+      .contacts__content {
+        clip-path: polygon(0 0, 0 59%, 31% 100%, 0 100%);
+      }
+
+      .map-open {
+        top: 74%;
+        left: 10.5%;
+      }
+    }
+  }
+
+  .map-open {
+    top: 74%;
+    left: 81.4%;
+  }
+}
+
+@media all and (max-width: 320px) {
+  #map {
+    position: relative;
+    height: 400px;
+  }
+
+  .contacts__content {
+    background: #000;
+    clip-path: none;
+  }
+
+  .map-open {
+    display: none;
+  }
 }
